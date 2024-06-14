@@ -1,0 +1,5 @@
+0 shooting
+1 violence
+2 theft
+3 normal
+4 explosion
