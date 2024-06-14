@@ -1,6 +1,11 @@
+
 # Anomaly Detection and Notification System
 
 This project is designed to detect anomalies from an IP camera feed, save the anomaly frames, and send notifications via SMS using Twilio. Additionally, it serves the saved anomaly frames through a local HTTP server.
+
+## Description
+
+We trained a model using the I3D (Inflated 3D) architecture on the UCF Crime Dataset, which is available [here](https://www.kaggle.com/datasets/odins0n/ucf-crime-dataset). The resulting trained model (`win.h5`) is used in this project to detect anomalies in real-time from an IP camera feed.
 
 ## Features
 
@@ -12,7 +17,7 @@ This project is designed to detect anomalies from an IP camera feed, save the an
 
 ## Requirements
 
-- Python 3.x
+- Python 3.10.0
 - TensorFlow
 - Keras
 - OpenCV
@@ -40,10 +45,10 @@ This project is designed to detect anomalies from an IP camera feed, save the an
 ## Configuration
 
 1. **IP Camera Configuration:**
-    - Update the `username`, `password`, and `ip_camera_url` variables in `anomaly_detection.py` with your IP camera details.
+    - Update the `username`, `password`, and `ip_camera_url` variables in `class.py` with your IP camera details.
 
 2. **Twilio Configuration:**
-    - Update the `account_sid`, `auth_token`, `twilio_phone_number`, and `recipient_phone_number` variables in `anomaly_detection.py` with your Twilio account details and recipient's phone number.
+    - Update the `account_sid`, `auth_token`, `twilio_phone_number`, and `recipient_phone_number` variables in `class.py` with your Twilio account details and recipient's phone number.
 
 ## Usage
 
@@ -70,7 +75,7 @@ This project is designed to detect anomalies from an IP camera feed, save the an
 ```
 anomaly-detection/
 │
-├── class.py     # Main script for detecting anomalies and sending SMS notifications
+├── class.py                 # Main script for detecting anomalies and sending SMS notifications
 ├── server.py                # Script to serve saved anomaly frames over HTTP
 ├── win.h5                   # Pre-trained Keras model (not included in the repo)
 ├── labels.txt               # Labels for the model (not included in the repo)
@@ -79,12 +84,12 @@ anomaly-detection/
 └── README.md                # Project README file
 ```
 
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
 ## Acknowledgements
 
 - [Twilio](https://www.twilio.com/) for their API to send SMS notifications.
 - [TensorFlow](https://www.tensorflow.org/) and [Keras](https://keras.io/) for the machine learning framework.
 - [OpenCV](https://opencv.org/) for computer vision tasks.
+
+---
+
+Feel free to customize this README file with additional details or sections as needed.
